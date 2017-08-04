@@ -1,0 +1,120 @@
+﻿
+<!-- //navigation -->
+<!-- breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">Checkout Page</li>
+        </ol>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- checkout -->
+<div class="checkout">
+    <div class="container">
+        <h2>Your shopping cart contains: <span>3 Products</span></h2>
+        <div class="checkout-right">
+            <table class="timetable_sub">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Nombre del Producto</th>
+                        <th>Precio c/u</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody id="itemcarrito2"></tbody>
+
+
+                <!--quantity-->
+                <script>
+									$('.value-plus').on('click', function(){
+										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
+										divUpd.text(newVal);
+									});
+
+									$('.value-minus').on('click', function(){
+										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
+										if(newVal>=1) divUpd.text(newVal);
+									});
+                </script>
+                <!--quantity-->
+            </table>
+        </div>
+
+
+
+        <div class="checkout-left">
+            <div class="checkout-left-basket">
+                <h4>Continue to basket</h4>
+                <ul>
+                    <li>Product1 <i>-</i> <span>$15.00 </span></li>
+                    <li>Product2 <i>-</i> <span>$25.00 </span></li>
+                    <li>Product3 <i>-</i> <span>$29.00 </span></li>
+                    <li>Total Service Charges <i>-</i> <span>$15.00</span></li>
+                    <li>Total <i>-</i> <span>$84.00</span></li>
+                </ul>
+            </div>
+
+            <div class="checkout-right-basket">
+                <a href="single.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+
+
+<p class="right-align">
+    In the next step you will choose your shipping address &nbsp; &nbsp;
+    <a href='@Url.Action("Paso2","Compra")' class="btn btn-primary higher bold">CONTINUAR</a>
+</p>
+
+<!-- //checkout -->
+
+
+
+<script>
+        $(function () {
+            var carrito = localStorage.getItem("carrito");
+            var productos = [];
+            if (carrito != null) {
+                productos = JSON.parse(carrito);
+                CargarProductos(productos);
+            }
+        });
+        function CargarProductos(productos) {
+            var html = '';
+            var total = 0;
+
+            $.each(productos, function () {
+                total += this.Precio * this.Cantidad
+                html += '<tr class="rem1">' +
+
+                ' <td class="invert">1</td>' +
+                ' <td class="invert-image"><a href="single.html"><img src="/ImgProductos/' + this.Imagen + '"alt="" class="img-responsive" width="20" height="20" /></a></td>' +
+                ' <td class="invert">' +
+                '        <div class="quantity">'+
+                '            <div class="quantity-select">'+
+                '                <div class="entry value-minus">&nbsp;</div>'+
+                '                <div class="entry value"><span>1</span></div>'+
+                '                <div class="entry value-plus active">&nbsp;</div>'+
+                '            </div>'+
+                '        </div>'+
+                '    </td>'+
+                ' <td class="invert">'+ this.Denominacion +'</td>'+
+                ' <td class="invert">' + this.Precio +'</td>'+
+                ' <td class="invert">' +
+                ' <div class="rem">'+
+                ' <div class="close1"> </div>'+
+                '</div>'
+
+            });
+            $('#itemcarrito2').html(html);
+
+            $("#totalCompra2").text('S/.' + total);
+        }
+</script>

@@ -1,35 +1,30 @@
-﻿<!--
-author: W3layouts
-author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>PrestoBar,  Tienda Virtual de licores exclusivos | Home </title>
-    <!-- for-mobile-apps -->
+    <title>PrestoBar, Tienda Virtual de licores exclusivos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Super Market Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <meta name="keywords" content="Prestobar, Licorería exclusiva en Ayacucho" />
     <script type="application/x-javascript">
         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-               function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!-- //for-mobile-apps -->
+               function hideURLbar(){ window.scrollTo(0,1); } 
+    </script>
+    <!-- css -->
     <link href="~/Resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/Resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <!-- font-awesome icons -->
+    <link href="~/Resources/css/listacarrito.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Resources/css/style_modal.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/Resources/css/font-awesome.css" rel="stylesheet">
-    <!-- //font-awesome icons -->
+    <!-- css -->
+
     <!-- js -->
-    <script src="~/Resources/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Resources/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Resources/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Resources/js/easing.js"></script>
     <!-- //js -->
     <link href='//fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-    <!-- start-smoth-scrolling -->
-    <script type="text/javascript" src="~/Resources/js/move-top.js"></script>
-    <script type="text/javascript" src="~/Resources/js/easing.js"></script>
+
     <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){
@@ -56,19 +51,54 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 </ul>
             </div>
+
+
             <div class="product_list_header">
-                <form action="#" method="post" class="last">
-                    <input type="hidden" name="cmd" value="_cart">
-                    <input type="hidden" name="display" value="1">
-                    <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-                </form>
-            </div>
+
+                <!--  ==========  -->
+                <!--  = Cart =  -->
+                <!--  ==========  -->
+                 
+                   <button class="w3view-cart" id="paginas1" href="javascript:void(0)" data-toggle="modal" data-target="#responsive"><i id="nroProductosCarrito" class="fa fa-cart-arrow-down" aria-hidden="true">(0)</i>  </button>
+                         
+                        <div class="modal fade" id="responsive" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                         
+                                            <div class="cart">
+                                                <p id="totalCompraCarrito" class="dark-clr hidden-tablet">0.00</p>
+                                            </div>
+                                            <div class="open-panel">
+
+                                                <div id="itemcarrito"></div>
+
+                                                <div class="summary">
+                                                    <div class="line">
+                                                        <div class="row-fluid">
+                                                            <div class="span6">TOTAL:</div>
+                                                            <div id="totalCarrito" class="span6 align-right size-16">0.00</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="proceed">
+                                                    <a href='@Url.Action("Comprar","Comprar")' class="btn btn-danger pull-right bold higher">Comprar <i class="icon-shopping-cart"></i></a>
+                                                    <small>Shipping costs are calculated based on location. <a href="#">More information</a></small>
+                                                </div>
+                                            </div>
+    
+                                </div>
+                            <!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+                       
+                         <!-- /cart -->
+                </div>
             <div class="clearfix"> </div>
         </div>
     </div>
 
     <!-- Buscador -->
-
     <div class="logo_products">
         <div class="container">
             <div class="w3ls_logo_products_left1">
@@ -110,17 +140,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span class="icon-bar"></span>
                     </button>
                 </div>
+
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="@Url.Action("Index", "Home")" class="act">Inicio</a></li>
-                        <!-- Mega Menu -->
+                    
+                         <!-- Mega Menu -->
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groceries<b class="caret"></b></a>
+                            <!-- Whisky-->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Whisky<b class="caret"></b></a>
                             <ul class="dropdown-menu multi-column columns-3">
                                 <div class="row">
                                     <div class="multi-gd-img">
                                         <ul class="multi-column-dropdown">
-                                            <h6>All Groceries</h6>
+                                            <h6>Todo Whisky's</h6>
                                             <li><a href="groceries.html">Dals & Pulses</a></li>
                                             <li><a href="groceries.html">Almonds</a></li>
                                             <li><a href="groceries.html">Cashews</a></li>
@@ -129,17 +162,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <li><a href="groceries.html">Rice & Rice Products</a></li>
                                         </ul>
                                     </div>
-
                                 </div>
                             </ul>
                         </li>
+                        <!-- Tequila-->
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Household<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tequila<b class="caret"></b></a>
                             <ul class="dropdown-menu multi-column columns-3">
                                 <div class="row">
                                     <div class="multi-gd-img">
                                         <ul class="multi-column-dropdown">
-                                            <h6>All Household</h6>
+                                            <h6>Todo Tequilas</h6>
                                             <li><a href="household.html">Cookware</a></li>
                                             <li><a href="household.html">Dust Pans</a></li>
                                             <li><a href="household.html">Scrubbers</a></li>
@@ -153,13 +186,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </div>
                             </ul>
                         </li>
+
+                        <!-- Vodka -->
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Personal Care<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vodka<b class="caret"></b></a>
                             <ul class="dropdown-menu multi-column columns-3">
                                 <div class="row">
                                     <div class="multi-gd-img">
                                         <ul class="multi-column-dropdown">
-                                            <h6>Baby Care</h6>
+                                            <h6>Todo Vodka</h6>
                                             <li><a href="personalcare.html">Baby Soap</a></li>
                                             <li><a href="personalcare.html">Baby Care Accessories</a></li>
                                             <li><a href="personalcare.html">Baby Oil & Shampoos</a></li>
@@ -168,17 +203,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <li><a href="personalcare.html">Diapers & Wipes</a></li>
                                         </ul>
                                     </div>
-
                                 </div>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Packaged Foods<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vinos<b class="caret"></b></a>
                             <ul class="dropdown-menu multi-column columns-3">
                                 <div class="row">
                                     <div class="multi-gd-img">
                                         <ul class="multi-column-dropdown">
-                                            <h6>All Accessories</h6>
+                                            <h6>Todo Vino</h6>
                                             <li><a href="packagedfoods.html">Baby Food</a></li>
                                             <li><a href="packagedfoods.html">Dessert Items</a></li>
                                             <li><a href="packagedfoods.html">Biscuits</a></li>
@@ -187,18 +221,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <li><a href="packagedfoods.html">Chocolates & Sweets</a></li>
                                         </ul>
                                     </div>
-
-
                                 </div>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beverages<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pisco<b class="caret"></b></a>
                             <ul class="dropdown-menu multi-column columns-3">
                                 <div class="row">
                                     <div class="multi-gd-img">
                                         <ul class="multi-column-dropdown">
-                                            <h6>Tea & Coeffe</h6>
+                                            <h6>Todo Pisco</h6>
                                             <li><a href="beverages.html">Green Tea</a></li>
                                             <li><a href="beverages.html">Ground Coffee</a></li>
                                             <li><a href="beverages.html">Herbal Tea</a></li>
@@ -211,61 +243,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </div>
                             </ul>
                         </li>
-                        <li><a href="gourmet.html">Gourmet</a></li>
-                        <li><a href="offers.html">Offers</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="gourmet.html">Otros</a></li>
+                        <li><a href="offers.html">Ofertas</a></li>
+                        <li><a href="offers.html">Servicios</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </div>
 
-
-
     @RenderBody()
 
-
-    <!-- //new -->
     <!-- //footer -->
     <div class="footer">
         <div class="container">
             <div class="w3_footer_grids">
                 <div class="col-md-3 w3_footer_grid">
-                    <h3>Contact</h3>
+                    <h3>Contacto</h3>
 
                     <ul class="address">
-                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Rs. San Juan Mz C lt 16 <span>Ayacucho</span></li>
+                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">prestobar@gmail.com</a></li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>(051) 999 139 707</li>
                     </ul>
                 </div>
                 <div class="col-md-3 w3_footer_grid">
-                    <h3>Information</h3>
+                    <h3>Información</h3>
                     <ul class="info">
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">About Us</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="contact.html">Contact Us</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="short-codes.html">Short Codes</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="faq.html">FAQ's</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Special Products</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">Nosotros</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="contact.html">Contacto</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="faq.html">Preguntas Frecuentes</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Productos Especiales</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 w3_footer_grid">
-                    <h3>Category</h3>
+                    <h3>Categorías</h3>
                     <ul class="info">
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="groceries.html">Groceries</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="household.html">Household</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="personalcare.html">Personal Care</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="packagedfoods.html">Packaged Foods</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="beverages.html">Beverages</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="groceries.html">Whisky</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="household.html">Tequila</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="personalcare.html">Vodka</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="packagedfoods.html">Vinos</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="beverages.html">Pisco</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="beverages.html">Otros</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 w3_footer_grid">
-                    <h3>Profile</h3>
+                    <h3>Perfil</h3>
                     <ul class="info">
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Store</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">My Cart</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Tienda</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">Mis Compras</a></li>
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.html">Login</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="registered.html">Create Account</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="registered.html">Crear Cuenta</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
@@ -275,7 +304,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="footer-copy">
 
             <div class="container">
-                <p>© 2017 PrestoBar. Reservado todos los drechos | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+                <p>© 2017 PrestoBar. Reservado todos los drechos | Design by <a href="https://www.facebook.com/vfernando89">Inka</a></p>
             </div>
         </div>
 
@@ -318,17 +347,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
     </script>
     <!-- //here ends scrolling icon -->
-    <script src="~/Resources/js/minicart.min.js"></script>
-    <script>
-	// Mini Cart
-	paypal.minicart.render({
-		action: '#'
-	});
-
-	if (~window.location.search.indexOf('reset=true')) {
-		paypal.minicart.reset();
-	}
-    </script>
+    
     <!-- main slider-banner -->
     <script src="~/Resources/js/skdslider.min.js"></script>
     <link href="~/Resources/css/skdslider.css" rel="stylesheet">
@@ -342,6 +361,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		});
     </script>
-    <!-- //main slider-banner -->
+
+    <script>
+
+        $(function () {
+            var carrito = localStorage.getItem("carrito");
+            var productos = [];
+            if (carrito != null) {
+                productos = JSON.parse(carrito);
+                CargaCarrito(productos);
+            }
+        });
+
+        function AgregarCarrito(productoid, denominacion, imagen, precio) {
+            var carrito = localStorage.getItem("carrito");
+            var productos = [];
+            if (carrito != null) {
+                productos = JSON.parse(carrito);
+            }
+
+            var itemActual;
+            for (var i = 0; i < productos.length; i++) {
+                if (productos[i].ProductoId == productoid) {
+                    itemActual = productos[i];
+                }
+            }
+
+            if (!itemActual) {
+                productos.push({ ProductoId: productoid, Denominacion: denominacion, Precio: precio, Cantidad: 1, Imagen: imagen });
+            } else {
+                itemActual.Cantidad++;
+            }
+
+            var jsonStr = JSON.stringify(productos);
+            localStorage.setItem("carrito", jsonStr);
+
+            CargaCarrito(productos);
+
+        }
+
+        function CargaCarrito(productos) {
+            var html = '';
+            var total = 0;
+
+            $("#nroProductosCarrito").text('(' + productos.length + ')');
+
+            $.each(productos, function () {
+                total += this.Precio * this.Cantidad
+                html += '<div class="item-in-cart clearfix">' +
+                       '    <div class="image">' +
+                '             <img src="/ImgProductos/' + this.Imagen + '"  width="50" height="50" alt="cart item" />' +
+                '           </div>' +
+                '           <div class="desc">' +
+                '                 <strong><a href="product.html">' + this.Denominacion + '</a></strong>' +
+                '                <span class="light-clr qty">Qty: ' + this.Cantidad + ' &nbsp;' +
+                '                       <a href="#" class="icon-remove-sign" title="Remove Item"></a>' +
+                '                    </span>' +
+                '                </div>' +
+                '                <div class="price">' +
+                '                   <strong>S/. ' + this.Precio + '</strong>' +
+                '               </div>' +
+                '           </div>';
+            });
+            $('#itemcarrito').html(html);
+
+            $("#totalCompraCarrito,#totalCarrito").text('S/.' + total);
+
+        }
+
+    </script>
+
+
 </body>
 </html>

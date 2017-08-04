@@ -104,6 +104,9 @@
       <DependentUpon>DBPrestoBar.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="ImgProductos\20170719062643.jpg" />
+    <Content Include="ImgProductos\20170725011816.jpg" />
+    <Content Include="ImgProductos\no_disponible.jpg" />
     <Content Include="Models\ModelTienda.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelTienda.edmx</DependentUpon>
@@ -115,11 +118,14 @@
       <LastGenOutput>ModelTienda.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\css\bootstrap.css" />
+    <Content Include="Resources\css\bootstrap.css.map" />
     <Content Include="Resources\css\bootstrap.min.css" />
     <Content Include="Resources\css\font-awesome.css" />
     <Content Include="Resources\css\Site.css" />
     <Content Include="Resources\css\skdslider.css" />
     <Content Include="Resources\css\style.css" />
+    <Content Include="Resources\css\listacarrito.css" />
+    <Content Include="Resources\css\style_modal.css" />
     <Content Include="Resources\images\1.png" />
     <Content Include="Resources\images\10.png" />
     <Content Include="Resources\images\11.jpg" />
@@ -209,10 +215,13 @@
     <Content Include="Resources\js\bootstrap.js" />
     <Content Include="Resources\js\bootstrap.min.js" />
     <Content Include="Resources\js\easing.js" />
+    <Content Include="Areas\admin\Views\Producto\Adjuntos.cshtml" />
+    <Content Include="Areas\admin\Views\AHome\index.cshtml" />
     <None Include="Resources\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Resources\js\jquery-1.10.2.js" />
     <Content Include="Resources\js\jquery-1.10.2.min.js" />
     <Content Include="Resources\js\jquery-1.11.1.min.js" />
+    <Content Include="Resources\js\jquery.form.min.js" />
     <Content Include="Resources\js\minicart.min.js" />
     <Content Include="Resources\js\modernizr-2.6.2.js" />
     <Content Include="Resources\js\move-top.js" />
@@ -224,7 +233,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\Controllers\AHomeController.cs" />
     <Compile Include="Areas\admin\Controllers\ProductoController.cs" />
+    <Compile Include="Areas\admin\Models\ResponseModel.cs" />
+    <Compile Include="Controllers\ComprarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -291,6 +303,7 @@
     <Content Include="Areas\admin\Views\Producto\Details.cshtml" />
     <Content Include="Areas\admin\Views\Producto\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Producto\Index.cshtml" />
+    <Content Include="Views\Comprar\Comprar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -298,9 +311,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\admin\Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

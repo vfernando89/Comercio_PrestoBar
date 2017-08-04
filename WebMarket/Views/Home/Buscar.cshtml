@@ -5,17 +5,25 @@
 @model List<WebMarket.Models.Producto>
 <div class="newproducts-w3agile">
     <div class="container">
-        <h3>New offers</h3>
+
+        <h5>Resultado de busqueda para: @ViewBag.clave</h5>
 
         <!--Productos en busqueda-->
+        @{
+            int i = 1;
+        }
 
+        @foreach (var item in Model)
+        {
+            var imagen = @item.ProductoImagen.FirstOrDefault();
+            string img = imagen == null ? "no_disponible.jpg" : imagen.Imagen;
         <div class="agile_top_brands_grids">
+ 
 
-            @foreach (var item in Model)
-            {       
             <div class="col-md-3 top_brand_left-1">
                
                 <div class="hover14 column">
+
                     <div class="agile_top_brand_left_grid">
                         <div class="agile_top_brand_left_grid_pos">
                             <img src="~/Resources/images/offer.png" alt=" " class="img-responsive">
@@ -24,8 +32,8 @@
                             <figure>
                                 <div class="snipcart-item block">
                                     <div class="snipcart-thumb">
-                                        <a href="products.html"><img title=" " alt=" " src="~/Resources/images/14.png"></a>
-                                        <p>Fried-gram</p>
+                                        <a href="products.html"><img width="150" height="150" title=" " alt=" " src="~/ImgProductos/@img"></a>
+                                        <p>@item.Denominacion</p>
                                         <div class="stars">
                                             <i class="fa fa-star blue-star" aria-hidden="true"></i>
                                             <i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -47,7 +55,7 @@
                                                 <input type="hidden" name="currency_code" value="USD">
                                                 <input type="hidden" name="return" value=" ">
                                                 <input type="hidden" name="cancel_return" value=" ">
-                                                <input type="submit" name="submit" value="Add to cart" class="button">
+                                                <input onclick="AgregarCarrito(@item.ProductoId,'@item.Denominacion','@img','@item.Precio')" type="submit" name="submit" value="Agregar Compra" class="button">
                                             </fieldset>
                                         </form>
                                     </div>
@@ -59,9 +67,15 @@
                
             </div>
 
-            }
-
+            @if (i % 4 == 0)
+            {
             <div class="clearfix"> </div>
+            }
+            
+            @{
+                i = i + 1;
+            }
         </div>
+        }
     </div>
 </div>

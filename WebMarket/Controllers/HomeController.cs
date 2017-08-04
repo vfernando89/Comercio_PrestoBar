@@ -11,16 +11,29 @@ namespace WebMarket.Controllers
     {
         private Models.DBPrestoBarEntities bd = new Models.DBPrestoBarEntities();
         // GET: Home
-        public ActionResult Index()
+        public ActionResult Index(string id = "")
         {
-            return View();
+            //Logica de acceso a base de datos
+
+            var productosi = bd.Producto.Where(x=>x.Denominacion.Contains(id))
+            .Take(6)
+            .ToList();
+            //Devolver una lista de Productos .OrderByDescending(x => x.ProductoId)
+
+            ViewBag.clave = id;
+            return View(productosi);
         }
+    
+
 
         public ActionResult Buscar(string id="")
         {
             //Logica de acceso a base de datos
-            var productos = bd.Producto.Where(x=>x.Descripcion.Contains(id)).ToList();
+            var productos = bd.Producto.Where(x=>x.Denominacion.Contains(id))
+                .Take(12)
+                .ToList();
             //Devolver una lista de Productos
+            ViewBag.clave = id;
             return View(productos);
         }
     }
